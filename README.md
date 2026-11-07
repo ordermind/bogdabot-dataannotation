@@ -81,5 +81,5 @@ Run these commands from the repository root:
 
 ```sh
 dotnet build bogdabot.slnx
-dotnet test server/tests/tests.csproj
+cd server/tests && dotnet test
 ```
