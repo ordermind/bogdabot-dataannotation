@@ -41,3 +41,6 @@ data/
 !.env.example
 *.kate-swp
 coverage.json
+/docker-compose.yml
+/Makefile
+/docker-images
