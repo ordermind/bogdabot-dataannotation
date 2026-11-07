@@ -44,3 +44,6 @@ coverage.json
 /docker-compose.yml
 /Makefile
 /docker-images
+/opencode.json
+/.opencode
+/problem.txt
