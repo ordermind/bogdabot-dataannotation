@@ -1,0 +1,21 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <DefaultItemExcludes>$(DefaultItemExcludes);tests/**;artifacts/**</DefaultItemExcludes>
+
+    <Authors>Kristofer Tengström</Authors>
+    <Product>Bogdabot Backend Shared</Product>
+    <Description>Shared code for the Bogdabot backend</Description>
+    <Version>0.1.0</Version>
+    <AssemblyName>Bogdabot.Shared</AssemblyName>
+    <RootNamespace>Bogdabot.Shared</RootNamespace>
+    <!-- Suppress warnings about namespace -->
+    <NoWarn>$(NoWarn);IDE0130</NoWarn>
+    <!-- Suppress suggestions for making methods static -->
+    <NoWarn>$(NoWarn);CA1822</NoWarn>
+  </PropertyGroup>
+
+</Project>

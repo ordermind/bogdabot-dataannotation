@@ -1,0 +1,22 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net10.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <DefaultItemExcludes>$(DefaultItemExcludes);tests/**;artifacts/**</DefaultItemExcludes>
+
+    <Authors>Kristofer Tengström</Authors>
+    <Product>Bogdabot Backend CLI</Product>
+    <Description>Command-line utility for Bogdabot</Description>
+    <Version>0.1.0</Version>
+    <AssemblyName>Bogdabot.Cli</AssemblyName>
+    <RootNamespace>Bogdabot.Cli</RootNamespace>
+    <!-- Suppress warnings about namespace -->
+    <NoWarn>$(NoWarn);IDE0130</NoWarn>
+    <!-- Suppress suggestions for making methods static -->
+    <NoWarn>$(NoWarn);CA1822</NoWarn>
+  </PropertyGroup>
+
+</Project>

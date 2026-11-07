@@ -1,0 +1,43 @@
+*.swp
+*.*~
+project.lock.json
+.DS_Store
+*.pyc
+nupkg/
+
+# Visual Studio Code
+.vscode
+
+# User-specific files
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Build results
+x64/
+x86/
+build/
+bld/
+[Bb]in/
+[Oo]bj/
+[Oo]ut/
+msbuild.log
+msbuild.err
+msbuild.wrn
+
+# Custom
+/server/[Dd]ebug/
+/server/[Dd]ebugPublic/
+/server/[Rr]elease/
+/server/[Rr]eleases/
+data/
+/.dotnet/
+/.aspnet/
+/.vscode-server/
+/logs/
+.env
+.env.*
+!.env.example
+*.kate-swp
+coverage.json

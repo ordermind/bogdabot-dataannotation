@@ -1,0 +1,69 @@
+For help on parameters, run python3 grid_backtest.py --help
+
+Relatively successful grids:
+# Grid-min: Starting price / 2
+# Grid-max: Grid-min * 4
+
+Static grids (usually perform the best):
+
+# Starting price 2020: 15.01
+python3 grid_backtest.py --csv "silver_etc_price_2020_2026.csv" --year 2020 --grid-mode static --grid-size 0.058 --grid-min 7.50 --grid-max 30 --strategy every4
+python3 grid_backtest.py --csv "silver_etc_price_2020_2026.csv" --year 2020 --grid-mode static --grid-size 0.058 --grid-min 7.50 --grid-max 30 --strategy every4 --no-initial-assets
+
+# Starting price 2021: 20.75
+python3 grid_backtest.py --csv "silver_etc_price_2020_2026.csv" --year 2021 --grid-mode static --grid-size 0.058 --grid-min 10.375 --grid-max 41.5 --strategy every4
+python3 grid_backtest.py --csv "silver_etc_price_2020_2026.csv" --year 2021 --grid-mode static --grid-size 0.058 --grid-min 10.375 --grid-max 41.5 --strategy every4 --no-initial-assets
+
+# Starting price 2022: 18.98
+python3 grid_backtest.py --csv "silver_etc_price_2020_2026.csv" --year 2022 --grid-mode static --grid-size 0.058 --grid-min 9.5 --grid-max 38 --strategy every4
+python3 grid_backtest.py --csv "silver_etc_price_2020_2026.csv" --year 2022 --grid-mode static --grid-size 0.058 --grid-min 9.5 --grid-max 38 --strategy every4 --no-initial-assets
+
+# Starting price 2023: 21.00
+python3 grid_backtest.py --csv "silver_etc_price_2020_2026.csv" --year 2023 --grid-mode static --grid-size 0.058 --grid-min 10.5 --grid-max 42 --strategy every4
+python3 grid_backtest.py --csv "silver_etc_price_2020_2026.csv" --year 2023 --grid-mode static --grid-size 0.058 --grid-min 10.5 --grid-max 42 --strategy every4 --no-initial-assets
+
+# Starting price 2024: 20.06
+python3 grid_backtest.py --csv "silver_etc_price_2020_2026.csv" --year 2024 --grid-mode static --grid-size 0.058 --grid-min 10 --grid-max 40 --strategy every4
+python3 grid_backtest.py --csv "silver_etc_price_2020_2026.csv" --year 2024 --grid-mode static --grid-size 0.058 --grid-min 10 --grid-max 40 --strategy every4 --no-initial-assets
+
+# Starting price 2025: 25.91
+python3 grid_backtest.py --csv "silver_etc_price_2020_2026.csv" --year 2025 --grid-mode static --grid-size 0.058 --grid-min 13 --grid-max 52 --strategy every4
+python3 grid_backtest.py --csv "silver_etc_price_2020_2026.csv" --year 2025 --grid-mode static --grid-size 0.058 --grid-min 13 --grid-max 52 --strategy every4 --no-initial-assets
+
+# Starting price 2026: 57.88
+python3 grid_backtest.py --csv "silver_etc_price_2020_2026.csv" --year 2026 --grid-mode static --grid-size 0.058 --grid-min 29 --grid-max 116 --strategy every4
+python3 grid_backtest.py --csv "silver_etc_price_2020_2026.csv" --year 2026 --grid-mode static --grid-size 0.058 --grid-min 29 --grid-max 116 --strategy every4 --no-initial-assets
+
+
+ATR-based grids (more complex, right now underperforming compared to static grids):
+
+When using `every4`, omitting `--no-initial-assets` now pre-funds the
+sell targets above the starting price, just like the other strategies.
+
+# Starting price 2020: 15.01
+python3 grid_backtest.py --csv "silver_etc_price_2020_2026.csv" --year 2020 --grid-mode atr --atr-multiplier 3.05  --grid-min 7.50 --grid-max 30 --atr-window-multiplier 50 --atr-window-sticky --strategy half-split
+python3 grid_backtest.py --csv "silver_etc_price_2020_2026.csv" --year 2020 --grid-mode atr --atr-multiplier 3.05  --grid-min 7.50 --grid-max 30 --atr-window-multiplier 50 --atr-window-sticky --strategy half-split --no-initial-assets
+
+# Starting price 2021: 20.75
+python3 grid_backtest.py --csv "silver_etc_price_2020_2026.csv" --year 2021 --grid-mode atr --atr-multiplier 3.05  --grid-min 10.375 --grid-max 41.5 --atr-window-multiplier 50 --atr-window-sticky --strategy half-split
+python3 grid_backtest.py --csv "silver_etc_price_2020_2026.csv" --year 2021 --grid-mode atr --atr-multiplier 3.05  --grid-min 10.375 --grid-max 41.5 --atr-window-multiplier 50 --atr-window-sticky --strategy half-split --no-initial-assets
+
+# Starting price 2022: 18.98
+python3 grid_backtest.py --csv "silver_etc_price_2020_2026.csv" --year 2022 --grid-mode atr --atr-multiplier 3.05  --grid-min 9.5 --grid-max 38 --atr-window-multiplier 50 --atr-window-sticky --strategy half-split
+python3 grid_backtest.py --csv "silver_etc_price_2020_2026.csv" --year 2022 --grid-mode atr --atr-multiplier 3.05  --grid-min 9.5 --grid-max 38 --atr-window-multiplier 50 --atr-window-sticky --strategy half-split --no-initial-assets
+
+# Starting price 2023: 21.00
+python3 grid_backtest.py --csv "silver_etc_price_2020_2026.csv" --year 2023 --grid-mode atr --atr-multiplier 3.05  --grid-min 10.5 --grid-max 42 --atr-window-multiplier 50 --atr-window-sticky --strategy half-split
+python3 grid_backtest.py --csv "silver_etc_price_2020_2026.csv" --year 2023 --grid-mode atr --atr-multiplier 3.05  --grid-min 10.5 --grid-max 42 --atr-window-multiplier 50 --atr-window-sticky --strategy half-split --no-initial-assets
+
+# Starting price 2024: 20.06
+python3 grid_backtest.py --csv "silver_etc_price_2020_2026.csv" --year 2024 --grid-mode atr --atr-multiplier 3.05  --grid-min 10 --grid-max 40 --atr-window-multiplier 50 --atr-window-sticky --strategy half-split
+python3 grid_backtest.py --csv "silver_etc_price_2020_2026.csv" --year 2024 --grid-mode atr --atr-multiplier 3.05  --grid-min 10 --grid-max 40 --atr-window-multiplier 50 --atr-window-sticky --strategy half-split --no-initial-assets
+
+# Starting price 2025: 25.91
+python3 grid_backtest.py --csv "silver_etc_price_2020_2026.csv" --year 2025 --grid-mode atr --atr-multiplier 3.05  --grid-min 13 --grid-max 52 --atr-window-multiplier 50 --atr-window-sticky --strategy half-split
+python3 grid_backtest.py --csv "silver_etc_price_2020_2026.csv" --year 2025 --grid-mode atr --atr-multiplier 3.05  --grid-min 13 --grid-max 52 --atr-window-multiplier 50 --atr-window-sticky --strategy half-split --no-initial-assets
+
+# Starting price 2026: 57.88
+python3 grid_backtest.py --csv "silver_etc_price_2020_2026.csv" --year 2026 --grid-mode atr --atr-multiplier 3.05  --grid-min 29 --grid-max 116 --atr-window-multiplier 50 --atr-window-sticky --strategy half-split
+python3 grid_backtest.py --csv "silver_etc_price_2020_2026.csv" --year 2026 --grid-mode atr --atr-multiplier 3.05  --grid-min 29 --grid-max 116 --atr-window-multiplier 50 --atr-window-sticky --strategy half-split --no-initial-assets

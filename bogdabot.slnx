@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Solution>
+  <Folder Name="/server/">
+    <Project Path="server/Bogdabot.Server.csproj" />
+    <Project Path="server/tests/tests.csproj" />
+  </Folder>
+  <Folder Name="/shared/">
+    <Project Path="shared/Bogdabot.Shared.csproj" />
+  </Folder>
+  <Folder Name="/cli/">
+    <Project Path="cli/Bogdabot.Cli.csproj" />
+  </Folder>
+</Solution>
